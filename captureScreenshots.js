@@ -3,8 +3,11 @@ const fs = require('fs');
 const path = require('path');
 
 (async () => {
-  // Launch Puppeteer
-  const browser = await puppeteer.launch();
+  // Launch Puppeteer with sandbox disabled
+  const browser = await puppeteer.launch({
+    headless: "new", // or simply true if you prefer the default
+    args: ['--no-sandbox', '--disable-setuid-sandbox']
+  });
   const page = await browser.newPage();
 
   // Create the images folder if it doesn't exist
@@ -31,7 +34,7 @@ const path = require('path');
       await page.goto(app.url, { waitUntil: 'networkidle2' });
       // Optionally adjust the viewport dimensions to suit your screenshot needs
       await page.setViewport({ width: 1280, height: 800 });
-      
+
       const screenshotPath = path.join(imagesDir, `${app.name}-screenshot.png`);
       await page.screenshot({ path: screenshotPath, fullPage: true });
       console.log(`Screenshot saved: ${screenshotPath}`);
