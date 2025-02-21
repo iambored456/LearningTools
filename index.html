@@ -23,7 +23,7 @@
       --spacing-lg: 24px;
     }
 
-    /* Global Reset/Defaultsfdfd */
+    /* Global Reset */
     html, body {
       margin: 0;
       padding: 0;
@@ -91,12 +91,34 @@
       text-align: center;
     }
 
+    /* Anchor styling for clickability */
+    .app-link {
+      text-decoration: none;
+      color: var(--color-link);
+      display: block;
+    }
+
+    .app-link:hover {
+      cursor: pointer;
+    }
+
+    .app-link:hover .app-title {
+      text-decoration: underline;
+    }
+
     /* Image styling for app screenshots */
     .app-entry img {
       max-width: 100%;
       border-radius: var(--border-radius);
       display: block;
       margin: 0 auto;
+    }
+
+    /* Title below the screenshot */
+    .app-title {
+      margin-top: var(--spacing-sm);
+      font-size: 1rem;
+      font-weight: var(--font-weight-bold);
     }
 
     /* Responsive adjustments for smaller screens */
@@ -118,19 +140,31 @@
       <div class="app-row">
         <!-- Visual Metronome -->
         <div class="app-entry">
-          <img src="images/Visual-Metronome-screenshot.png" alt="Screenshot of Visual Metronome">
+          <a href="https://quinnfleming.github.io/Visual-Metronome" class="app-link" target="_blank">
+            <img src="images/Visual-Metronome-screenshot.png" alt="Screenshot of Visual Metronome">
+            <div class="app-title">Visual Metronome</div>
+          </a>
         </div>
         <!-- Pitch Detect -->
         <div class="app-entry">
-          <img src="images/Pitch-Detect-screenshot.png" alt="Screenshot of Pitch Detect">
+          <a href="https://quinnfleming.github.io/Pitch-Detect" class="app-link" target="_blank">
+            <img src="images/Pitch-Detect-screenshot.png" alt="Screenshot of Pitch Detect">
+            <div class="app-title">Pitch Detect</div>
+          </a>
         </div>
         <!-- Diatonic Compass -->
         <div class="app-entry">
-          <img src="images/Diatonic-Compass-screenshot.png" alt="Screenshot of Diatonic Compass">
+          <a href="https://quinnfleming.github.io/Diatonic-Compass" class="app-link" target="_blank">
+            <img src="images/Diatonic-Compass-screenshot.png" alt="Screenshot of Diatonic Compass">
+            <div class="app-title">Diatonic Compass</div>
+          </a>
         </div>
-        <!-- Launchpad Whack-a-Mole -->
+        <!-- Student Notation (moved from Classroom Learning Tools) -->
         <div class="app-entry">
-          <img src="images/LaunchpadWhackaMole-screenshot.png" alt="Screenshot of Launchpad Whack-a-Mole">
+          <a href="https://quinnfleming.github.io/Student-Notation" class="app-link" target="_blank">
+            <img src="images/Student-Notation-screenshot.png" alt="Screenshot of Student Notation">
+            <div class="app-title">Student Notation</div>
+          </a>
         </div>
       </div>
     </div>
@@ -144,15 +178,24 @@
       <div class="app-row">
         <!-- ReadAlong Highlighter -->
         <div class="app-entry">
-          <img src="images/ReadAlongHighlighter-screenshot.png" alt="Screenshot of ReadAlong Highlighter">
+          <a href="https://quinnfleming.github.io/ReadAlongHighlighter" class="app-link" target="_blank">
+            <img src="images/ReadAlongHighlighter-screenshot.png" alt="Screenshot of ReadAlong Highlighter">
+            <div class="app-title">ReadAlong Highlighter</div>
+          </a>
         </div>
-        <!-- Student Notation -->
+        <!-- Launchpad Whack-a-Mole (moved from Music Learning Tools) -->
         <div class="app-entry">
-          <img src="images/Student-Notation-screenshot.png" alt="Screenshot of Student Notation">
+          <a href="https://quinnfleming.github.io/LaunchpadWhackaMole" class="app-link" target="_blank">
+            <img src="images/LaunchpadWhackaMole-screenshot.png" alt="Screenshot of Launchpad Whack-a-Mole">
+            <div class="app-title">Launchpad Whack-a-Mole</div>
+          </a>
         </div>
         <!-- ClassClock -->
         <div class="app-entry">
-          <img src="images/ClassClock-screenshot.png" alt="Screenshot of ClassClock">
+          <a href="https://quinnfleming.github.io/ClassClock" class="app-link" target="_blank">
+            <img src="images/ClassClock-screenshot.png" alt="Screenshot of ClassClock">
+            <div class="app-title">ClassClock</div>
+          </a>
         </div>
       </div>
     </div>
