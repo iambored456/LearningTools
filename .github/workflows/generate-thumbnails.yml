@@ -1,0 +1,44 @@
+name: Generate Thumbnails
+
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:  # Allows manual triggering
+
+jobs:
+  generate-thumbnails:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Generate thumbnails
+        run: npm run screenshot
+
+      - name: Commit updated screenshots
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add images/*.png
+          # Only commit if there are changes
+          git diff-index --quiet HEAD || git commit -m "Update thumbnails"
+      - name: Push changes
+        run: git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      # Optional: Deploy to GitHub Pages if needed
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./
