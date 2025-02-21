@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Quinn Fleming's App Hub</title>
+  <style>
+    /* Root variables: colors, spacing, and font settings */
+    :root {
+      --color-bg: #0d1117;             /* Dark background */
+      --color-panel: #161b22;          /* Slightly lighter background for main panels */
+      --color-sub-panel: #1f2937;      /* Sub-colored background for app entries */
+      --color-text-primary: #c9d1d9;   /* Primary text color */
+      --color-text-secondary: #8b949e; /* Secondary text color */
+      --color-link: #58a6ff;           /* Typical GitHub link color in dark mode */
+      --color-border: #30363d;         /* Subtle border color */
+      --font-family-base: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      --font-weight-normal: 400;
+      --font-weight-bold: 600;
+      --border-radius: 6px;
+      --spacing-sm: 8px;
+      --spacing-md: 16px;
+      --spacing-lg: 24px;
+    }
+
+    /* Global Reset/Defaultsfdfd */
+    html, body {
+      margin: 0;
+      padding: 0;
+      background-color: var(--color-bg);
+      color: var(--color-text-primary);
+      font-family: var(--font-family-base);
+      font-weight: var(--font-weight-normal);
+    }
+
+    /* Page Container: centers the content and sets a max width */
+    .page-container {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: var(--spacing-lg);
+    }
+
+    /* Section containers for the two tool groups */
+    .app-section {
+      background-color: var(--color-panel);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-lg);
+      margin-bottom: var(--spacing-lg);
+    }
+
+    /* Section title container */
+    .title-container {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start; /* Left align the text */
+      gap: 2px; /* Small space between text elements */
+    }
+
+    /* Smaller, italicized text for "Quinn Fleming's" */
+    .small-fancy {
+      font-size: 0.85rem;
+      font-style: italic;
+      color: var(--color-text-secondary);
+      display: block;
+    }
+
+    /* Main heading text */
+    .main-title {
+      font-size: 1.5rem;
+      font-weight: var(--font-weight-bold);
+      color: var(--color-text-primary);
+      margin: 0;
+    }
+
+    /* Row layout for app entries within each section */
+    .app-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--spacing-md);
+    }
+
+    /* Individual app entry container styling */
+    .app-entry {
+      background-color: var(--color-sub-panel);
+      border: 1px solid var(--color-border);
+      border-radius: var(--border-radius);
+      padding: var(--spacing-md);
+      flex: 1 1 calc(50% - var(--spacing-md)); /* Two columns with gap adjustment */
+      box-sizing: border-box;
+      text-align: center;
+    }
+
+    /* Image styling for app screenshots */
+    .app-entry img {
+      max-width: 100%;
+      border-radius: var(--border-radius);
+      display: block;
+      margin: 0 auto;
+    }
+
+    /* Responsive adjustments for smaller screens */
+    @media (max-width: 600px) {
+      .app-entry {
+        flex: 1 1 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-container">
+    <!-- Music Learning Tools Section -->
+    <div class="app-section">
+      <div class="title-container">
+        <span class="small-fancy">Quinn Fleming's</span>
+        <h2 class="main-title">Music Learning Tools</h2>
+      </div>
+      <div class="app-row">
+        <!-- Visual Metronome -->
+        <div class="app-entry">
+          <img src="images/Visual-Metronome-screenshot.png" alt="Screenshot of Visual Metronome">
+        </div>
+        <!-- Pitch Detect -->
+        <div class="app-entry">
+          <img src="images/Pitch-Detect-screenshot.png" alt="Screenshot of Pitch Detect">
+        </div>
+        <!-- Diatonic Compass -->
+        <div class="app-entry">
+          <img src="images/Diatonic-Compass-screenshot.png" alt="Screenshot of Diatonic Compass">
+        </div>
+        <!-- Launchpad Whack-a-Mole -->
+        <div class="app-entry">
+          <img src="images/LaunchpadWhackaMole-screenshot.png" alt="Screenshot of Launchpad Whack-a-Mole">
+        </div>
+      </div>
+    </div>
+
+    <!-- Classroom Learning Tools Section -->
+    <div class="app-section">
+      <div class="title-container">
+        <span class="small-fancy">Quinn Fleming's</span>
+        <h2 class="main-title">Classroom Learning Tools</h2>
+      </div>
+      <div class="app-row">
+        <!-- ReadAlong Highlighter -->
+        <div class="app-entry">
+          <img src="images/ReadAlongHighlighter-screenshot.png" alt="Screenshot of ReadAlong Highlighter">
+        </div>
+        <!-- Student Notation -->
+        <div class="app-entry">
+          <img src="images/Student-Notation-screenshot.png" alt="Screenshot of Student Notation">
+        </div>
+        <!-- ClassClock -->
+        <div class="app-entry">
+          <img src="images/ClassClock-screenshot.png" alt="Screenshot of ClassClock">
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
